@@ -1,6 +1,9 @@
-﻿
-using DesignPatterns.Library.Polymorphism;
+﻿// This application contains a collection of implemented design patterns based on those discussed in the book entitled 
+// "Design Patterns: Elements of Reusable Object-Oriented Software" by the "Gang of Four" (Erich Gamma, Richard Helm,
+// Ralph Johnson, and John Vlissides)
 
-var payments = new PaymentBase[] { new CreditCard(100), new Paypal(200) };
-foreach (var payment in payments)
-    payment.ProcessPayment(); 
+using DesignPatterns.Client.TestDrivers.Creational.Builder;
+using DesignPatterns.Console.TestDrivers.Creational.Factory;
+
+//BuilderTestDriver.RunTest();
+FactoryTestDriver.RunTest();

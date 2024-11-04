@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35303.130
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Client", "DesignPatterns.Client\DesignPatterns.Client.csproj", "{FA0FF424-6529-4F34-8BD9-FB2A737B646C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.Console", "DesignPatterns.Client\DesignPatterns.Console.csproj", "{FA0FF424-6529-4F34-8BD9-FB2A737B646C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.Library", "DesignPatterns.Library\DesignPatterns.Library.csproj", "{AFD16F35-DC5F-4C89-86F2-AE9CC24BC25D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DesignPatterns.Library", "DesignPatterns.Library\DesignPatterns.Library.csproj", "{AFD16F35-DC5F-4C89-86F2-AE9CC24BC25D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DesignPatterns.GUI_WPF", "DesignPatterns.GUI_WPF\DesignPatterns.GUI_WPF.csproj", "{0F591353-4528-43F3-B481-B5803026B086}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{AFD16F35-DC5F-4C89-86F2-AE9CC24BC25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AFD16F35-DC5F-4C89-86F2-AE9CC24BC25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AFD16F35-DC5F-4C89-86F2-AE9CC24BC25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F591353-4528-43F3-B481-B5803026B086}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F591353-4528-43F3-B481-B5803026B086}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F591353-4528-43F3-B481-B5803026B086}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F591353-4528-43F3-B481-B5803026B086}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
