@@ -11,4 +11,8 @@
     <ProjectReference Include="..\DesignPatterns.Library\DesignPatterns.Library.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="TestDrivers\Creational\Prototype\" />
+  </ItemGroup>
+
 </Project>
