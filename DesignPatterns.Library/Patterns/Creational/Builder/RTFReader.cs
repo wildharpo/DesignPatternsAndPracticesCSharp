@@ -1,4 +1,5 @@
-﻿using System.Text.RegularExpressions;
+﻿using GemBox.Document;
+using System.Text.RegularExpressions;
 
 namespace DesignPatterns.Library.Patterns.Creational.Builder
 {
@@ -13,51 +14,19 @@ namespace DesignPatterns.Library.Patterns.Creational.Builder
 
         public void ParseRTF()
         {
-            using(var rtfFileReader = new StringReader(Properties.Resources.CSCI_0371_Syllabus))
+            GemBox.Document.ComponentInfo.SetLicense("FREE-LIMITED-KEY");
+            using (var ms = new MemoryStream())
             {
-                // Read contents of the Rich Text File
-                var rtfFileContents = rtfFileReader.ReadToEnd();
-
-                // Use regex to get the portions of the RTF file that have actual text.
-                // Ideally, we would also grab the various header and other information available in 
-                // the Rich Text File for font change and formatting information, but it would take 
-                // more time than I have available at the moment.
-                var paragraphsRegex = new Regex("(rtlch.*themedata)", RegexOptions.Singleline);
-                var paragraphMatches = paragraphsRegex.Matches(rtfFileContents);
-                var paragraphsSection = paragraphMatches
-                    .First()
-                    .Value
-                    .Replace("}{\\*\\themedata", "");
-                // The paragraph match result has come back from regex as one giant blob of text, so 
-                // split up the results into individual "sentences"
-                var paragraphs = paragraphsSection
-                    .Substring(1)
-                    .Split("}{")
-                    .Where(s => s.Substring(0,6) == "\\rtlch")
-                    .ToList();
-
-                // Loop through the paragraphs for conversion
-                foreach (var paragraph in paragraphs)
+                var rtfBytes = System.Text.Encoding.ASCII.GetBytes(Properties.Resources.CSCI_0371_Syllabus_Brief);
+                ms.Write(rtfBytes, 0, rtfBytes.Length);
+                ms.Position = 0;
+                var doc = DocumentModel.Load(ms);
+                var docParagraphs = doc.GetChildElements(true, ElementType.Paragraph);
+                foreach (var paragraph in docParagraphs)
                 {
-                    // Not all paragraphs are perfectly formatted, so split any additional paragraphs that are
-                    // unintentionally joined together
-                    var paragraphSplits = paragraph.Split("}");
-                    foreach(var paragraphSplit in paragraphSplits)
-                    {
-                        // Rich Text Files have tags with the format of insrsid<randomNumberHere> <actualTextHere>, so 
-                        // find where the actual text begins
-                        var tagPrecedingTextLocation = paragraphSplit.LastIndexOf("insrsid");
-                        if (tagPrecedingTextLocation == -1)
-                            continue;
-                        var lastSpaceBeforeText = paragraphSplit.Substring(tagPrecedingTextLocation).IndexOf(" ");
-                        var textValue = paragraphSplit.Substring(tagPrecedingTextLocation + lastSpaceBeforeText + 1)
-                            .Replace("\\par",""); // Remove the trailing "par" tag that sometimes appears in RTF format
-                        foreach (var character in textValue)
-                            _textConverter.ConvertCharacter(character);
-                        //// Add a carriage return new line after each "line" of text
-                        //_textConverter.ConvertCharacter('\r');
-                        //_textConverter.ConvertCharacter('\n');
-                    }
+                    var textValue = paragraph.Content.ToString();
+                    foreach (var character in textValue)
+                        _textConverter.ConvertCharacter(character);
                 }
             }
         }
