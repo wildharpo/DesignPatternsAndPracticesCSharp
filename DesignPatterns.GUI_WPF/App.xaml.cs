@@ -1,6 +1,4 @@
-﻿using System.Configuration;
-using System.Data;
-using System.Windows;
+﻿using System.Windows;
 
 namespace DesignPatterns.GUI_WPF
 {
@@ -10,5 +8,4 @@ namespace DesignPatterns.GUI_WPF
     public partial class App : Application
     {
     }
-
 }

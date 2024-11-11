@@ -3,24 +3,22 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:DesignPatterns.GUI_WPF"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Window.Resources>
-    </Window.Resources>
-    <Grid>
+    <Grid Background="DarkSlateGray">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MaxWidth="150" />
             <ColumnDefinition MaxWidth="150" />
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition MaxHeight="50" />
             <RowDefinition MaxHeight="50" />
+            <RowDefinition MaxHeight="50" />
             <RowDefinition />
         </Grid.RowDefinitions>
-        <Button Grid.Column="0" Grid.Row="0" Height="20" Width="140" Click="Button_Click_1">Create Motif Scrollbar</Button>
-        <Button Grid.Column="0" Grid.Row="1" Height="20" Width="140" Click="Button_Click">Create PM Scrollbar</Button>
-        <ScrollBar Name="CustomScrollbar" Grid.Column="1" Grid.RowSpan="3" Height="300" />
+        <Button x:Name="AbstractFactoryButton" Grid.Column="0" Grid.Row="0" Height="25" Width="130" Click="AbstractFactoryButton_Click">Abstract Factory</Button>
+        <Button x:Name="AdapterButton" Grid.Column="0" Grid.Row="1" Height="25" Width="130" Click="AdapterButton_Click">Adapter</Button>
+        <Button x:Name="DecoratorButton" Grid.Column="0" Grid.Row="2" Height="25" Width="130" Click="DecoratorButton_Click">Decorator</Button>
+        <ContentControl Margin="10" Grid.Column="1" Grid.RowSpan="4" x:Name="MainContentControl" />
     </Grid>
 </Window>
