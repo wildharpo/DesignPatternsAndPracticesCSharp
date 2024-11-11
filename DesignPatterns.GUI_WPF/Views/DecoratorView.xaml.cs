@@ -49,9 +49,7 @@ namespace DesignPatterns.GUI_WPF.Views
             var components = new List<VisualComponent>();
             var textView = new TextView();
             var scrollDecorator = new ScrollDecorator(textView);
-            var borderDecorator = new BorderDecorator(textView);
-            // in reality, this would be new BorderDecorator(scrollDecorator), but because our class library isn't actually
-            // doing the drawing logic, we are mocking up an example here.
+            var borderDecorator = new BorderDecorator(scrollDecorator);
             components.Add(scrollDecorator);
             components.Add(borderDecorator);
 

@@ -9,12 +9,17 @@
         public override void Draw()
         {
             base.Draw();
-            ScrollTo();
+            // custom logic here to draw a scrollbar
+        }
+
+        public override void Resize()
+        {
+            // resize the scrollbar
         }
 
         public void ScrollTo()
         {
-            // draw a custom scroll bar
+            // scroll to a particular point
         }
     }
 }

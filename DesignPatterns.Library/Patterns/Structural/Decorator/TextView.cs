@@ -6,5 +6,10 @@
         {
             // Draw a TextView
         }
+
+        public override void Resize()
+        {
+            // Resize the TextView
+        }
     }
 }

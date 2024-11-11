@@ -22,5 +22,10 @@ namespace DesignPatterns.Library.Patterns.Structural.Decorator
         {
             // draw a custom border
         }
+
+        public override void Resize()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
