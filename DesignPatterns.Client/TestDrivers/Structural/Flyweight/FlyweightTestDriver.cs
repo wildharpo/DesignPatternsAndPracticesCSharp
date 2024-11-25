@@ -46,7 +46,7 @@ namespace DesignPatterns.Console.TestDrivers.Structural.Flyweight
             var glyphContext = new GlyphContext();
             var window = new Window();
             glyphContext.SetFont(timesNewRoman24, 1);
-            characterGlyph_a.Draw(window, glyphContext);
+            characterGlyph_o.Draw(window, glyphContext);
             glyphContext.SetFont(timesNewRoman12, 187);
             characterGlyph_b.Draw(window, glyphContext);
             characterGlyph_j.Draw(window, glyphContext);
