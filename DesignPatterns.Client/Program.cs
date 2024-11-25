@@ -6,6 +6,9 @@ using DesignPatterns.Console.TestDrivers.Behavioral.ChainOfResponsibility;
 using DesignPatterns.Console.TestDrivers.Behavioral.Command;
 using DesignPatterns.Console.TestDrivers.Behavioral.Interpreter;
 using DesignPatterns.Console.TestDrivers.Behavioral.Iterator;
+using DesignPatterns.Console.TestDrivers.Behavioral.Mediator;
+using DesignPatterns.Console.TestDrivers.Behavioral.Memento;
+using DesignPatterns.Console.TestDrivers.Behavioral.Observer;
 using DesignPatterns.Console.TestDrivers.Structural.Composite;
 using DesignPatterns.Console.TestDrivers.Structural.Facade;
 using DesignPatterns.Console.TestDrivers.Structural.Flyweight;
@@ -22,8 +25,11 @@ using DesignPatterns.Console.TestDrivers.Structural.Proxy;
 //FlyweightTestDriver.RunTest();
 //ProxyTestDriver.RunTest();
 
-// Behavioral Design Patterns Tests
+//// Behavioral Design Patterns Tests
 //ChainOfResponsibilityTestDriver.RunTest();
 //CommandTestDriver.RunTest();
-InterpreterTestDriver.RunTest();
+//InterpreterTestDriver.RunTest();
 //IteratorTestDriver.RunTest();
+//MediatorTestDriver.RunTest();
+//MementoTestDriver.RunTest();
+//ObserverTestDriver.RunTest();
